@@ -1,0 +1,37 @@
+# Spring的配置文件数据库:
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    username: root
+    url: jdbc:mysql://60.205.230.70:3306/pe6?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+  redis:
+    host: 60.205.230.70
+    password: root
+    port: 6379
+  rabbitmq:
+    host: 60.205.230.70
+    username: root
+    password: root
+    port: 5672
+application:
+  base-package: com.js
+mybatis:
+  typeAliasesPackage: ${application.base-package}.pojo, ${application.base-package}.form, ${application.base-package}.mapper
+  mapper-locations: classpath:mappers/*/*.xml
+  configuration:
+    # 一定要设置，避免个别SQL执行时间过长，把系统搞跨
+    default-statement-timeout: 5
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: false
+#pagehelper分页插件配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSq
+
+logging:
+  config: classpath:logback-spring.xml
