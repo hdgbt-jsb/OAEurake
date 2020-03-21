@@ -18,7 +18,7 @@ spring:
 application:
   base-package: com.js
 mybatis:
-  typeAliasesPackage: ${application.base-package}.pojo, ${application.base-package}.form, ${application.base-package}.mapper
+  typeAliasesPackage: ${application.base-package}.pojo, ${application.base-package}.vo, ${application.base-package}.dto
   mapper-locations: classpath:mappers/*/*.xml
   configuration:
     # 一定要设置，避免个别SQL执行时间过长，把系统搞跨
