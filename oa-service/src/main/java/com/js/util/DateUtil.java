@@ -9,11 +9,14 @@ import java.util.Date;
  * @version: V1.0
  */
 public class DateUtil {
+    private DateUtil(){
+        throw new IllegalStateException("DateUtil工具异常");
+    }
     /**
      * 将日期转化为字符串(年/月/日) 8 位
      */
     public static Date getDate(Date dateTemp){
-        if (dateTemp == null || "".equals(dateTemp)) {
+        if (dateTemp == null) {
             dateTemp = new Date();
         }
         return dateTemp;
@@ -38,11 +41,10 @@ public class DateUtil {
     /**
      * 将一个字符串转化为Date(年,月,日,时,分,秒)
      */
-    public static Date strToDateLong(String strDate) {
+    public static Date strToDateLong(String strDate){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         ParsePosition pos = new ParsePosition(0);
-        Date date = (Date) formatter.parse(strDate, pos);
-        return date;
+        return formatter.parse(strDate, pos);
     }
     /**
      * 将日期转为8位字符串(年,月,日)

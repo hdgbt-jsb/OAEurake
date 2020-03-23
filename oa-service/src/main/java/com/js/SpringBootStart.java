@@ -23,8 +23,8 @@ public class SpringBootStart {
         }
 
     }
-    private static String print() {
-        StringBuffer sb = new StringBuffer();
+    private static synchronized String print() {
+        StringBuilder sb = new StringBuilder();
         sb.append("\n");
         sb.append("                   _ooOoo_\n");
         sb.append("                  o8888888o\n");

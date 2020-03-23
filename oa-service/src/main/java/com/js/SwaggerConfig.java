@@ -7,6 +7,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
@@ -39,7 +40,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("黑大OA签到管理平台")
                 .description("黑大OA")
-                .contact("技术部")
+                .contact(new Contact("技术部","http://oa.hdgbt.com","2545251075@qq.com"))
                 .version("1.0")
                 .build();
     }
