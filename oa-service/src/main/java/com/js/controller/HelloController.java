@@ -18,6 +18,10 @@ public class HelloController {
     @GetMapping("test")
     @ApiOperation(value = "测试Controller", notes = "测试Controller")
     public BaseResponse<String> testSwagger() {
+
+//第三种、Mapper接口方式的调用，推荐这种使用方式。
+//        PageHelper.offsetPage(1, 10);
+//        List<Country> list = countryMapper.selectIf(1);
         return new BaseResponse(StatusCode.SUCCESS.getCode(),"String","String");
     }
 }
