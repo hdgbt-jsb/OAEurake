@@ -4,15 +4,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @Description 启动类
  * @Author jishubu
+ * @ComponentScan 测试开发时开启注解可以运行swagger
  */
 @SpringBootApplication
 @Slf4j
 @MapperScan("com.js.mapper")
-//@ComponentScan(basePackages = {"com.js.config.swagger","com.js.controller"}) //测试开发时开启注解可以运行swagger
+@ComponentScan(basePackages = {"com.js.config.swagger","com.js.controller"})
 public class SpringBootStart {
     public static void main(String[] args) {
         try{
