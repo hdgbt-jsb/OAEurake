@@ -27,12 +27,14 @@ public class MyHandlerIntercepter implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler, ModelAndView modelAndView){
-        throw new UnsupportedOperationException();
+        log.info("Controller方法处理完之后，DispatcherServlet进行视图的渲染之前");
+        throw new UnsupportedOperationException("postHandle执行失败");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
                                 Object handler, Exception ex){
-        throw new UnsupportedOperationException();
+        log.info("多用于清理资源");
+        throw new UnsupportedOperationException("afterCompletion执行失败");
     }
 }
