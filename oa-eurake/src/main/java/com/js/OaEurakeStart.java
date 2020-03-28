@@ -1,24 +1,22 @@
 package com.js;
 
 import lombok.extern.slf4j.Slf4j;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * @Description 启动类
- * @Author jishubu
- * @ComponentScan 测试开发时开启注解可以运行swagger
+ * @Description Eurake注册中心
+ * @Author jiangshuang
  */
-@EnableEurekaClient
-@SpringBootApplication
 @Slf4j
-@MapperScan("com.js.mapper")
-public class SpringBootStart {
+@EnableEurekaServer
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+public class OaEurakeStart {
     public static void main(String[] args) {
         try{
-            SpringApplication.run(SpringBootStart.class,args);
+            SpringApplication.run(OaEurakeStart.class,args);
             log.info(print());
             log.info("项目启动成功");
         }catch (Exception e){

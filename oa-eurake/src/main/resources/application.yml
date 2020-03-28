@@ -1,0 +1,12 @@
+server:
+  port: 9001 #服务端口
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #是否将eureka自身作为应用注册到eureka注册中心
+    register-with-eureka: false
+    #为true时，可以启动，但报异常：Cannot execute request on any known server
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
