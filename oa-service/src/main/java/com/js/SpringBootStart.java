@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @Slf4j
 @MapperScan("com.js.mapper")
+//@ComponentScan(basePackages = {"com.js.config.swagger","com.js.controller"}) //测试开发时开启注解可以运行swagger
 public class SpringBootStart {
     public static void main(String[] args) {
         try{
