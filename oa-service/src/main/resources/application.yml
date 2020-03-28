@@ -12,7 +12,7 @@ server:
 
 spring:
   profiles:
-    active: test
+    active: master
     include: oa-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
