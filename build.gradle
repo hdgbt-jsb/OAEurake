@@ -28,10 +28,12 @@ allprojects {
         }
     }
 }
-
 subprojects {
     apply plugin: 'java'
-    apply  plugin: 'war';
+    apply plugin: 'war';
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
     // 指定编码格式
@@ -65,7 +67,7 @@ subprojects {
         annotationProcessor 'org.projectlombok:lombok:1.18.10'
         testCompileOnly 'org.projectlombok:lombok:1.18.10'
         testAnnotationProcessor 'org.projectlombok:lombok:1.18.10'
-        
+
         compile 'org.hibernate:hibernate-validator:5.3.6.Final'
         compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
         compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.4.1'
