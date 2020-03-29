@@ -18,6 +18,5 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:9001/eureka/
     encoder-name:
-  na
   application:
     name: oa-service
