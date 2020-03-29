@@ -13,6 +13,8 @@ spring:
     username: root
     password: root
     port: 5672
+  application:
+    name: oa-service
 eureka:
   client:
     serviceUrl:
