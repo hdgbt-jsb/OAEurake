@@ -10,3 +10,9 @@ eureka:
     fetch-registry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+#基本信息
+info:
+  description: 黑大OA签到平台注册中心
+  version: v1.0
+  author: 技术部

@@ -13,12 +13,3 @@ spring:
     username: root
     password: root
     port: 5672
-  application:
-    name: oa-service
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
-    encoder-name:
-  application:
-    name: oa-service

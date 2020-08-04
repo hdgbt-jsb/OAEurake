@@ -1,0 +1,28 @@
+
+# 服务名称
+spring:
+  application:
+    name: oa-gateway
+  # 开启 Gateway 服务注册中心服务发现
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+# Eureka Server 配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+# 配置Gateway日志等级，输出转发细节信息
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+server:
+  port: 10000
+
+#基本信息
+info:
+  description: 黑大OA签到平台网关
+  version: v1.0
+  author: 技术部
