@@ -45,8 +45,10 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
-    encoder-name:
+      defaultZone: http://localhost:10000/eureka/
+#    encoder-name:
+#    register-with-eureka: false
+    fetch-registry: false
   application:
     name: oa-service
 
