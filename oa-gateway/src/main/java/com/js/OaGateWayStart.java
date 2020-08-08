@@ -2,9 +2,11 @@ package com.js;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Description 网关启动类
@@ -12,7 +14,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @Slf4j
 @EnableDiscoveryClient
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@EnableEurekaClient
+@SpringBootApplication
 public class OaGateWayStart {
     public static void main(String[] args) {
         try{

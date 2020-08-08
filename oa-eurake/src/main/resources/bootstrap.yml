@@ -1,0 +1,6 @@
+# 应用名称
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 9001 #服务端口

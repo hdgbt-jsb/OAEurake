@@ -1,0 +1,6 @@
+# 应用名称
+spring:
+  application:
+    name: oa-gateway
+server:
+  port: 10000 #服务端口
