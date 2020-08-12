@@ -8,12 +8,12 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * @Description 网关启动类
+ * @EnableZuulProxy 网关注解
  * @Author jishubu
  */
 @Slf4j
 @EnableDiscoveryClient
 @SpringBootApplication
-//加上网关注解
 @EnableZuulProxy
 public class OaGateWayStart {
     public static void main(String[] args) {
