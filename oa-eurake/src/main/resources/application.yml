@@ -13,7 +13,7 @@ eureka:
     #为true时，可以启动，但报异常：Cannot execute request on any known server
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/
 
 #基本信息
 info:

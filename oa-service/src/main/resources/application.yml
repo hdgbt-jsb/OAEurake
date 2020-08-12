@@ -1,5 +1,4 @@
 server:
-  port: 8080
   tomcat:
     # 该线程池可以容纳的最大线程数。默认值：200；
     maxThreads: 300
@@ -11,14 +10,9 @@ server:
     uri-encoding: UTF-8
 
 spring:
-  profiles:
-    active: master
-    include: oa-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-  application:
-    name: oa-service
 application:
   base-package: com.js
 
@@ -43,9 +37,16 @@ logging:
   config: classpath:logback-spring.xml
 
 eureka:
+  instance:
+    # 使用 ip 代替实例名
+    prefer-ip-address: true
+    # 实例的主机名
+    hostname: ${spring.cloud.client.ip-address}
+    # 实例的 ID 规则
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://localhost:10000/eureka/
+      defaultZone: http://localhost:9001/eureka/
 #    encoder-name:
 #    register-with-eureka: false
     fetch-registry: false
