@@ -13,3 +13,5 @@ dependencies {
     compile group: 'com.auth0', name: 'java-jwt', version: '3.8.0'
 
 }
+jar.enabled=true
+//bootJar.enabled=true

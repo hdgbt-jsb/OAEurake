@@ -5,7 +5,8 @@ dependencies {
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.0.0.RELEASE'
 
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
-    runtime group: 'org.springframework.cloud', name: 'spring-cloud-dependencies', version: 'Greenwich.SR3', ext: 'pom'
+    runtime group: 'org.springframework.cloud', name: 'spring-cloud-dependencies', version: 'Finchley.SR4'
+    
     //mysql驱动
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
     //阿里数据库连接池

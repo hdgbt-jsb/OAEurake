@@ -6,7 +6,7 @@ import java.util.UUID;
  * @Author jiangshuang
  * 分布式id生成器
  */
-class IdUtils {
+public class IdUtils {
     private IdUtils(){
         throw new IllegalStateException("IdUtils工具异常");
     }
