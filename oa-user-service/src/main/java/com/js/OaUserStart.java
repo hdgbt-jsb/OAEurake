@@ -16,10 +16,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @Slf4j
 @MapperScan("com.js.mapper")
-public class SpringBootStart {
+public class OaUserStart {
     public static void main(String[] args) {
         try{
-            SpringApplication.run(SpringBootStart.class,args);
+            SpringApplication.run(OaUserStart.class,args);
             log.info(StartLogo.print());
             log.info("项目启动成功");
         }catch (Exception e){

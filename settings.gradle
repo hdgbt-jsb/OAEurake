@@ -1,7 +1,9 @@
 rootProject.name = 'OAEurake'
-include 'oa-service'
+include 'oa-operation-service'
 include 'oa-eurake'
 include 'oa-gateway'
-include 'oa-gateway'
 include 'oa-common'
+include 'oa-operation-api'
+include 'oa-user-service'
+include 'oa-user-api'
 

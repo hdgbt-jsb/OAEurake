@@ -1,6 +1,6 @@
 # 应用名称
 spring:
   application:
-    name: oa-service
+    name: oa-user-service
 server:
   port: 8080 #服务端口
