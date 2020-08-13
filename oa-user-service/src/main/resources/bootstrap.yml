@@ -3,4 +3,4 @@ spring:
   application:
     name: oa-user-service
 server:
-  port: 8080 #服务端口
+  port: 8081 #服务端口
