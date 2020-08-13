@@ -12,9 +12,6 @@ server:
 
 
 spring:
-  cloud:
-    client:
-      ip-address: 127.0.0.1
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
