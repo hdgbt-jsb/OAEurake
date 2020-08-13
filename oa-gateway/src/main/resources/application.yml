@@ -18,7 +18,8 @@ logging:
 #自定义路由映射
 zuul:
   routes:
-    oa-service: /apigateway/oa/**
+    oa-operation-service: /operation/**
+    oa-user-service: /user/**
   #统一入口为上面的配置，其他入口忽略
   ignored-patterns: /*-service/**
 
