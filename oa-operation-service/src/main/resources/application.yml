@@ -12,6 +12,13 @@ server:
 
 
 spring:
+  cloud:
+    consul:
+#      host: 192.168.1.102
+#      port: 8500
+      discovery:
+        service-name: oa-operation-service
+        prefer-ip-address: true
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
@@ -59,7 +66,7 @@ info:
 eureka:
   instance:
     # 使用 ip 代替实例名
-    prefer-ip-address: true
+#    prefer-ip-address: true
     # 实例的主机名
     hostname: ${spring.cloud.client.ip-address}
     # 实例的 ID 规则

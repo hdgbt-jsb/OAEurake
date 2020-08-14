@@ -1,75 +1,51 @@
-eureka:
-  instance:
-    # 使用 ip 代替实例名
-    prefer-ip-address: true
-    # 实例的主机名
-    hostname: ${spring.cloud.client.ip-address}
-    # 实例的 ID 规则
-    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
-  client:
-    serviceUrl:
-      # 注册中心地址
-      defaultZone: http://${eureka.instance.hostname}:9001/eureka/
-logging:
-  level:
-    # log 级别
-    org.springframework.cloud.gateway: debug
-
-  host:
-    connect-timeout-millis: 3000
-    socket-timeout-millis: 3000
-  #忽略整个服务，对外提供接口
-#  ignored-services: oa-service
-ribbon:
-  ReadTimeout: 3000
-  ConnectTimeout: 3000
-
-spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          # 是否和服务注册与发现组件结合，设置为 true 后可以直接使用应用名称调用服务
-          enabled: true
-#    consul:
-#      port: 8500
-#      host: localhost
-        service-name: ${spring.application.name}
-      # 路由（routes：路由，它由唯一标识（ID）、目标服务地址（uri）、一组断言（predicates）和一组过滤器组成（filters）。filters 不是必需参数。）
-      routes:
-#        - id: oa-operation-service
-#          uri: http://localhost:8080/
+#eureka:
+#  instance:
+#    # 使用 ip 代替实例名
+#    prefer-ip-address: true
+#    # 实例的主机名
+#    hostname: ${spring.cloud.client.ip-address}
+#    # 实例的 ID 规则
+#    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+#  client:
+#    serviceUrl:
+#      # 注册中心地址
+#      defaultZone: http://${eureka.instance.hostname}:9001/eureka/
+#logging:
+#  level:
+#    # log 级别
+#    org.springframework.cloud.gateway: debug
+#  host:
+#    connect-timeout-millis: 3000
+#    socket-timeout-millis: 3000
+#  #忽略整个服务，对外提供接口
+##  ignored-services: oa-service
+#ribbon:
+#  ReadTimeout: 3000
+#  ConnectTimeout: 3000
+#
+#spring:
+#  cloud:
+#    gateway:
+#      locator:
+#        lowerCaseServiceId: true
+#      discovery:
+#        locator:
+#          # 是否和服务注册与发现组件结合，设置为 true 后可以直接使用应用名称调用服务
+#          enabled: true
+#      # 路由（routes：路由，它由唯一标识（ID）、目标服务地址（uri）、一组断言（predicates）和一组过滤器组成（filters）。filters 不是必需参数。）
+#      routes:
+#        - id: operation
+#          uri: lb://oa-operation-service
 #          predicates:
 #            - Path=/operation/**
-#        - id: oa-user-serivce
-#          uri: http://localhost:8081/
-#          predicates:
-#            - Path=/user/**
-#        # 路由条件（predicates：断言，匹配 HTTP 请求内容）
-#        predicates:
-#          ## 转发地址格式为 uri/routeAll，/all 部分会被下面的过滤器给截取掉
-#          - Path=/all/routeAll
-#          ## 匹配 GET 请求
-#          - Method=GET
-        # 过滤器（filters：过滤器，过滤规则）
-        filters:
-          ## 截取路径位数
-          - StripPrefix=1
-          ## 添加指定参数
-          - AddRequestParameter=pass, yes
-          ## 熔断
-          - name: Hystrix
-            args:
-              name: fallbackcmd
-              ### fallback 时调用的方法 http://localhost:8000/fallback
-              fallbackUri: forward:/fallback
-          ## 限流
-          - name: RequestRateLimiter
-            args:
-              ### 限流过滤器的 Bean 名称
-              key-resolver: '#{@uriKeyResolver}'
-              ### 希望允许用户每秒处理多少个请求
-              redis-rate-limiter.replenishRate: 1
-              ### 用户允许在一秒钟内完成的最大请求数
-              redis-rate-limiter.burstCapacity: 3
-
+##           过滤器（filters：过滤器，过滤规则）
+#          filters:
+#            ## 截取路径位数
+#            - StripPrefix=1
+#            ## 熔断
+#            - name: Hystrix
+#              args:
+#                name: fallbackcmd
+#                ### fallback 时调用的方法 http://localhost:8000/fallback
+#                fallbackUri: forward:/fallback
+#

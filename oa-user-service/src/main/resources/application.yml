@@ -8,7 +8,6 @@ server:
     acceptCount: 1000
     # 编码方式
     uri-encoding: UTF-8
-
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -48,7 +47,6 @@ pagehelper:
 
 logging:
   config: classpath:logback-spring.xml
-
 eureka:
   instance:
     # 使用 ip 代替实例名
@@ -63,6 +61,7 @@ eureka:
 #    encoder-name:
 #    register-with-eureka: false
     fetch-registry: false
+    register-with-eureka: true
   application:
     name: oa-user-service
 

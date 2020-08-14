@@ -1,12 +1,7 @@
 dependencies {
     compile project(":oa-common")
-    testCompile group: 'junit', name: 'junit', version: '4.12'
     //Eurake注册中心依赖
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.2.1.RELEASE'
-
-
-    //SpringBootWeb模块
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.1.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.2.0.RELEASE'
 
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
     runtime group: 'org.springframework.cloud', name: 'spring-cloud-dependencies', version: 'Hoxton.SR6'

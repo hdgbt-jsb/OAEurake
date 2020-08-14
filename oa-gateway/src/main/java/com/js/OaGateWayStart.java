@@ -3,7 +3,6 @@ package com.js;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @Description 网关启动类
@@ -11,7 +10,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @Author jishubu
  */
 @Slf4j
-@EnableDiscoveryClient
 @SpringBootApplication
 public class OaGateWayStart {
     public static void main(String[] args) {

@@ -16,6 +16,7 @@ buildscript {
     // 构建时所需要的插件或者是其他的依赖
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+
     }
 
 }
@@ -42,8 +43,11 @@ subprojects {
 //    group = "com.js"
     description = "spring boot in action"
     dependencies {
-        // SpringBoot测试类需要的jar包
-        testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+        implementation 'org.springframework.boot:spring-boot-starter-webflux'
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation 'io.projectreactor:reactor-test'
         
         //lombok的jar包
         compileOnly 'org.projectlombok:lombok:1.18.10'
