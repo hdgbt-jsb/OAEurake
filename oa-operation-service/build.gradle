@@ -29,7 +29,11 @@ dependencies {
     //mybatis需要的
     compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.2'
 
+//    compile 'org.springframework.cloud:spring-cloud-starter-openfeign:2.2.0.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.0.RELEASE'
+    compile ("org.springframework.cloud:spring-cloud-starter-openfeign:2.2.0.RELEASE"){
+        exclude group: "com.sun.jersey"
+        exclude group: "com.sun.jersey.contribs"
+    }
 }
 description = "oa运营模块服务"

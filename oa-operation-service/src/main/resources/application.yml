@@ -1,6 +1,9 @@
 
 server:
   tomcat:
+#    port-header: X-Forwarded-Port
+#    protocol_header: x-forwarded-proto
+#    remote_ip_header: x-forwarded-for
     # 该线程池可以容纳的最大线程数。默认值：200；
     maxThreads: 300
     # 最大连接线程数，即：并发处理的最大请求数，默认值为 75

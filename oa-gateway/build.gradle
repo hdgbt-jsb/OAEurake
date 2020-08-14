@@ -2,4 +2,13 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-gateway', version: '2.2.1.RELEASE'
 
+    //Eurake注册中心依赖
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '2.2.0.RELEASE'
+    
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign
+    compile ("org.springframework.cloud:spring-cloud-starter-openfeign:2.2.0.RELEASE"){
+        exclude group: "com.sun.jersey"
+        exclude group: "com.sun.jersey.contribs"
+    }
 }

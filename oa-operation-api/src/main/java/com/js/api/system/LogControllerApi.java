@@ -29,10 +29,6 @@ public interface LogControllerApi {
     @ApiOperation(value = "分页获取系统日志", notes = "分页获取系统日志")
     BaseResponse<PageResVo<SysLogVo>> getLogMess(@RequestBody BasePageForm basePageForm);
 
-    @GetMapping("exportLog")
-    @ApiOperation(value = "导出系统日志", notes = "导出系统日志")
-    void exportLog(HttpServletResponse response);
-
     @GetMapping("addLog")
     @ApiOperation(value = "添加系统日志", notes = "添加系统日志")
     void addLog(@RequestBody SysLogForm sysLogForm);
