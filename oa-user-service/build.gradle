@@ -1,4 +1,7 @@
 dependencies {
+    compile project(":oa-common")
+    compile project(":oa-operation-api")
+    compile project(":oa-user-api")
     //Eurake注册中心依赖
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.2.0.RELEASE'
 
