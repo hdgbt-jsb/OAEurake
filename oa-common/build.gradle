@@ -4,10 +4,6 @@ dependencies {
     compile 'org.apache.poi:poi:3.17'
     compile 'org.apache.poi:poi-ooxml:3.17'
     compile 'org.apache.poi:poi-ooxml-schemas:3.17'
-    //SpringBootWeb模块
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-    //springboot的aop切面驱动
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
 
     compile 'org.hibernate:hibernate-validator:5.3.6.Final'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'

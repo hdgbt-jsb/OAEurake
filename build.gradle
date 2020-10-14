@@ -1,8 +1,8 @@
 buildscript {
     // 定义变量
     ext {
-        springBootVersion = '2.2.2.RELEASE'
-        springCloudVersion = 'Finchley.SR4'
+        springBootVersion = '2.2.0.RELEASE'
+        springCloudVersion = 'Hoxton.RELEASE'
         ALI_REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public'
     }
     // 仓库地址
@@ -46,6 +46,11 @@ subprojects {
     dependencies {
         // SpringBoot测试类需要的jar包
         testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+
+        //SpringBootWeb模块
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+        //springboot的aop切面驱动
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
 
         //lombok的jar包
         compileOnly 'org.projectlombok:lombok:1.18.10'
