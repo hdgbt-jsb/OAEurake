@@ -1,7 +1,8 @@
 buildscript {
     // 定义变量
     ext {
-        springBootVersion = '2.0.0.RELEASE'
+        springBootVersion = '2.2.2.RELEASE'
+        springCloudVersion = 'Finchley.SR4'
         ALI_REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public'
     }
     // 仓库地址
@@ -16,9 +17,11 @@ buildscript {
     // 构建时所需要的插件或者是其他的依赖
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//        classpath("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
     }
 
 }
+
 // 所有模块的总仓库地址
 allprojects {
     // 在build.gradle文件中直接声明的依赖项、仓库地址等信息是项目自身需要的资源。
@@ -39,12 +42,11 @@ subprojects {
     // 指定编码格式
     [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
     version = "1.0.0-SNAPSHOT"  // 开发版本： -SNAPSHOT 正式版本：.RELEASE
-//    group = "com.js"
     description = "spring boot in action"
     dependencies {
         // SpringBoot测试类需要的jar包
         testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
-        
+
         //lombok的jar包
         compileOnly 'org.projectlombok:lombok:1.18.10'
         annotationProcessor 'org.projectlombok:lombok:1.18.10'
@@ -57,5 +59,9 @@ subprojects {
         compile 'joda-time:joda-time:2.9.4'
 
     }
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
 }
-
