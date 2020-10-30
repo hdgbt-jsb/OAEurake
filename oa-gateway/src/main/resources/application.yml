@@ -38,8 +38,8 @@ spring:
           uri: lb://oa-operation-service
           predicates:
             - Path=/operation/**
-#      default-filters:
-#           过滤器（filters：过滤器，过滤规则）
+          #      default-filters:
+          #           过滤器（filters：过滤器，过滤规则）
           filters:
             ## 截取路径位数
             - StripPrefix=1

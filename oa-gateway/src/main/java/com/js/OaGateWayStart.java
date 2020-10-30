@@ -17,11 +17,11 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 public class OaGateWayStart {
     public static void main(String[] args) {
-        try{
-            SpringApplication.run(OaGateWayStart.class,args);
+        try {
+            SpringApplication.run(OaGateWayStart.class, args);
             log.info(print());
             log.info("项目启动成功");
-        }catch (Exception e){
+        } catch (Exception e) {
             log.info("项目启动失败");
         }
 

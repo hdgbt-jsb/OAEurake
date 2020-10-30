@@ -6,7 +6,7 @@ eureka:
     hostname: ${spring.cloud.client.ip-address}
     # 实例的 ID 规则
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
-#    hostname: localhost
+  #    hostname: localhost
   client:
     #是否将eureka自身作为应用注册到eureka注册中心
     register-with-eureka: false

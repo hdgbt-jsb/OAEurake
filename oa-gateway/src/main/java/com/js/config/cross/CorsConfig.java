@@ -5,6 +5,7 @@ package com.js.config.cross;
  * @Description: 配置系统跨域
  * @Date: 2020/5/19 13:04
  */
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;

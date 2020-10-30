@@ -22,18 +22,28 @@ public class TokenUtil {
         throw new IllegalStateException("Utility class");
     }
 
-    /** token过期时间目前暂时是1个小时 **/
+    /**
+     * token过期时间目前暂时是1个小时
+     **/
     private static final int EXPIRE_TIME = 60 * 60 * 1000;
-    /** 公共密钥 **/
+    /**
+     * 公共密钥
+     **/
     private static final String TOKEN_SECRET = "wddcdfdfhjtjthjdffsdfsd33hcskdncksndcnsnsvsdcsdc";
 
-    /** 获取用户名名称**/
+    /**
+     * 获取用户名名称
+     **/
     private static final String STUDENT_NUMBER = "studentNumber";
 
-    /** 获取用户名名称**/
+    /**
+     * 获取用户名名称
+     **/
     private static final String NAME_TRUE = "name";
 
-    /** 生成token **/
+    /**
+     * 生成token
+     **/
     public static String sign(String studentNumber, String name) {
         String token = null;
         try {
@@ -47,7 +57,7 @@ public class TokenUtil {
             header.put("alg", "HS256");
             // 附带String studentNumber等信息
             token = JWT.create().withHeader(header).withClaim(STUDENT_NUMBER, studentNumber).withClaim(NAME_TRUE, name)
-                .withExpiresAt(date).sign(algorithm);
+                    .withExpiresAt(date).sign(algorithm);
             log.info("生成的token值为{}", token);
         } catch (Exception ex) {
             log.info("Token出现的异常为{}", ex.toString());
@@ -57,7 +67,7 @@ public class TokenUtil {
 
     /**
      * 解析Token
-     * 
+     *
      * @param token
      * @return
      */
@@ -73,7 +83,7 @@ public class TokenUtil {
             log.info("hashMap的结果为{}", hashMap.toString());
             return hashMap;
         } catch (Exception ex) {
-            log.error("Token解析出现异常{}",ex);
+            log.error("Token解析出现异常{}", ex);
             throw new SystemException("Token无效");
         }
     }

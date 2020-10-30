@@ -20,13 +20,15 @@ public class DruidAspectConfig {
     public DruidStatInterceptor druidStatInterceptor() {
         return new DruidStatInterceptor();
     }
+
     @Bean
     @Scope("prototype")
     public JdkRegexpMethodPointcut druidStatPointcut() {
         JdkRegexpMethodPointcut pointcut = new JdkRegexpMethodPointcut();
-        pointcut.setPatterns("com.js.mapper.*.*","com.js.service.*.*");
+        pointcut.setPatterns("com.js.mapper.*.*", "com.js.service.*.*");
         return pointcut;
     }
+
     @Bean
     public DefaultPointcutAdvisor druidStatAdvisor(DruidStatInterceptor druidStatInterceptor, JdkRegexpMethodPointcut druidStatPointcut) {
         DefaultPointcutAdvisor defaultPointAdvisor = new DefaultPointcutAdvisor();

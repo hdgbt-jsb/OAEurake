@@ -38,7 +38,7 @@ subprojects {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
     // 指定编码格式
-    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
     version = "1.0.0-SNAPSHOT"  // 开发版本： -SNAPSHOT 正式版本：.RELEASE
     description = "spring boot in action"
     dependencies {
@@ -47,7 +47,7 @@ subprojects {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }
         testImplementation 'io.projectreactor:reactor-test'
-        
+
         //lombok的jar包
         compileOnly 'org.projectlombok:lombok:1.18.10'
         annotationProcessor 'org.projectlombok:lombok:1.18.10'

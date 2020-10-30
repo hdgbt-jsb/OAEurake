@@ -49,7 +49,7 @@ public class LogsAspect {
     }
 
     private void saveLog(ProceedingJoinPoint joinPoint, long time) {
-        MethodSignature signature = (MethodSignature)joinPoint.getSignature();
+        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         SysLogDto sysLog = new SysLogDto();
         sysLog.setUuid(IdUtils.get32Uuid());

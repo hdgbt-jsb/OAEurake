@@ -50,16 +50,16 @@ public enum StatusCode {
     }
 
     /**
-     * @Description 获取code码
      * @return java.lang.Integer
+     * @Description 获取code码
      **/
     public Integer getCode() {
         return code;
     }
 
     /**
-     * @Description 返回的异常信息
      * @return java.lang.String
+     * @Description 返回的异常信息
      **/
     public String getMsg() {
         return msg;
