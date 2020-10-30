@@ -24,7 +24,7 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer {
     /**
      * 不拦截路径
      **/
-    private String[] excludePathPatterns ={"/static/**","/public"};
+    private String[] excludePathPatterns = {"/static/**", "/public"};
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

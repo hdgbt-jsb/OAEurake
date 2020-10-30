@@ -26,6 +26,6 @@ public class HelloController {
         //第三种、Mapper接口方式的调用，推荐这种使用方式。
         PageHelper.offsetPage(1, 10);
         System.out.println("测试分支");
-        return new BaseResponse(StatusCode.SUCCESS.getCode(),"String",url);
+        return new BaseResponse(StatusCode.SUCCESS.getCode(), "String", url);
     }
 }

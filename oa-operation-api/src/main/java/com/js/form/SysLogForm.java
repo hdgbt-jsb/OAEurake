@@ -13,7 +13,7 @@ import java.util.Date;
  **/
 @ToString
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class SysLogForm extends BasePageForm {
 
     @ApiModelProperty("日志主键")

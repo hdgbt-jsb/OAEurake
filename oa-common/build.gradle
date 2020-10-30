@@ -8,10 +8,10 @@ dependencies {
     compile 'org.hibernate:hibernate-validator:5.3.6.Final'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
     compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.4.1'
-    
+
     //生成token
     compile group: 'com.auth0', name: 'java-jwt', version: '3.8.0'
-    
+
 }
-jar.enabled=true
+jar.enabled = true
 //bootJar.enabled=true

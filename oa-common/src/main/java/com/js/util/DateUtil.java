@@ -96,7 +96,7 @@ public class DateUtil {
 
     /**
      * 通过时间秒毫秒数判断两个时间的间隔
-     * 
+     *
      * @param date1
      * @param date2
      * @return
@@ -104,7 +104,7 @@ public class DateUtil {
     public static int differentDaysByMillisecond(Date date1, Date date2) {
         int days;
         try {
-            days = (int)((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
+            days = (int) ((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
         } catch (Exception e) {
             log.error("日期强转失败{}", e);
             throw new SystemException("数据强转失败");

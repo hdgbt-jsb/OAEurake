@@ -24,10 +24,12 @@ import java.util.List;
 public final class ExcelUtil {
 
     private static final String NULL = "null";
+
     /**
      * 将传入的数据导出excel表并下载
-     * @param response 返回的HttpServletResponse
-     * @param importlist 要导出的对象的集合
+     *
+     * @param response       返回的HttpServletResponse
+     * @param importlist     要导出的对象的集合
      * @param attributeNames 含有每个对象属性在excel表中对应的标题字符串的数组（请按对象中属性排序调整字符串在数组中的位置）
      */
     public static void export(HttpServletResponse response, List<?> importlist, String[] attributeNames, String fileName) {
@@ -50,7 +52,7 @@ public final class ExcelUtil {
 
         //循环字段名数组，创建标题行
         Row row = sheet.createRow(0);
-        for (int j = 0; j< tableAttributeName.length; j++){
+        for (int j = 0; j < tableAttributeName.length; j++) {
             //创建列
             Cell cell = row.createCell(j);
             //设置单元类型为String
@@ -58,12 +60,12 @@ public final class ExcelUtil {
             cell.setCellValue(transCellType(tableAttributeName[j]));
         }
         //创建普通行
-        for (int i = 0;i<datalist.size();i++){
+        for (int i = 0; i < datalist.size(); i++) {
             //因为第一行已经用于创建标题行，故从第二行开始创建
-            row = sheet.createRow(i+1);
+            row = sheet.createRow(i + 1);
             //如果是第一行就让其为标题行
             Object targetObj = datalist.get(i);
-            for (int j = 0;j<fields.length;j++){
+            for (int j = 0; j < fields.length; j++) {
                 //创建列
                 Cell cell = row.createCell(j);
                 cell.setCellType(CellType.STRING);
@@ -80,7 +82,7 @@ public final class ExcelUtil {
         }
         response.setContentType("application/octet-stream");
         //默认Excel名称
-        response.setHeader("Content-Disposition", "attachment;fileName="+ fileName );
+        response.setHeader("Content-Disposition", "attachment;fileName=" + fileName);
 
         try {
             response.flushBuffer();
@@ -91,13 +93,13 @@ public final class ExcelUtil {
 
     }
 
-    private static String transCellType(Object value){
+    private static String transCellType(Object value) {
         String str = null;
-        if (value instanceof Date){
+        if (value instanceof Date) {
             str = String.valueOf(value);
-        }else{
+        } else {
             str = String.valueOf(value);
-            if (str == NULL){
+            if (str == NULL) {
                 str = "";
             }
         }

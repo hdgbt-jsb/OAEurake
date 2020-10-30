@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @Author 姜爽
  * @Date 2019/12/3
- * @Description  拦截器设置 实现token拦截访问
+ * @Description 拦截器设置 实现token拦截访问
  */
 @Component
 @Configuration
@@ -23,7 +23,7 @@ public class MyHandlerIntercepter implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
-            return true;
+        return true;
     }
 
     @Override

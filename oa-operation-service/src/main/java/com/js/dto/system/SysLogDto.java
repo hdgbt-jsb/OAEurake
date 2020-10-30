@@ -14,7 +14,7 @@ import java.util.Date;
  **/
 @ToString
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class SysLogDto extends BasePageDto {
 
     @ApiModelProperty("日志主键")

@@ -21,7 +21,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail'
 
     //redis驱动
-    compile group: 'org.springframework.boot', name:'spring-boot-starter-data-redis'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis'
     //mybatis需要的
     compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.2'
 

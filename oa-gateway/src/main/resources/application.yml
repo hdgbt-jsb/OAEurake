@@ -1,4 +1,3 @@
-
 eureka:
   instance:
     # 使用 ip 代替实例名

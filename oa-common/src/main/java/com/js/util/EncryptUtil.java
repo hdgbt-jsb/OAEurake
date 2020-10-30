@@ -12,13 +12,12 @@ import java.security.SecureRandom;
 
 /**
  * 加密工具类
- *
+ * <p>
  * md5加密出来的长度是32位
- *
+ * <p>
  * sha加密出来的长度是40位
  *
  * @author 姜爽
- *
  */
 @Slf4j
 public final class EncryptUtil {
@@ -76,10 +75,8 @@ public final class EncryptUtil {
     /**
      * md5或者sha-1加密
      *
-     * @param src
-     *            要加密的内容
-     * @param algorithmName
-     *            加密算法名称：md5或者sha-1，不区分大小写
+     * @param src           要加密的内容
+     * @param algorithmName 加密算法名称：md5或者sha-1，不区分大小写
      * @return
      */
     private static final String encrypt(String src, String algorithmName) {
@@ -134,10 +131,8 @@ public final class EncryptUtil {
     /**
      * 加密
      *
-     * @param src
-     *            数据源
-     * @param key
-     *            密钥，长度必须是8的倍数
+     * @param src 数据源
+     * @param key 密钥，长度必须是8的倍数
      * @return 返回加密后的数据
      * @throws Exception
      */
@@ -160,12 +155,9 @@ public final class EncryptUtil {
     /**
      * 解密
      *
-     * @param src
-     *            数据源
-     * @param key
-     *            密钥，长度必须是8的倍数
+     * @param src 数据源
+     * @param key 密钥，长度必须是8的倍数
      * @return 返回解密后的原始数据
-     *
      * @throws Exception
      */
     private static final byte[] decrypt(byte[] src, byte[] key) throws Exception {
@@ -191,7 +183,7 @@ public final class EncryptUtil {
         byte[] b2 = new byte[b.length / 2];
         for (int n = 0; n < b.length; n += EVEN) {
             String item = new String(b, n, 2);
-            b2[n / 2] = (byte)Integer.parseInt(item, 16);
+            b2[n / 2] = (byte) Integer.parseInt(item, 16);
         }
         return b2;
     }
